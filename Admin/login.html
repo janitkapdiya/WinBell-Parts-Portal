@@ -73,7 +73,8 @@
 										<!--begin::Checkbox-->
 										<label class="form-check form-check-custom form-check-solid">
 											<input class="form-check-input h-20px w-20px" type="checkbox"
-												name="communication[]" value="phone" />
+												id="showPasswordCheckbox" name="communication[]" value="phone"
+												onclick="togglePasswordVisibility()" />
 											<span class="form-check-label fw-semibold">Show password</span>
 										</label>
 										<!--end::Checkbox-->
@@ -136,6 +137,17 @@
 	<!--begin::Custom Javascript(used for this page only)-->
 	<script src="assets/js/custom/authentication/sign-in/general.js"></script>
 	<!--end::Custom Javascript-->
+	</script>
+	<script>
+		// Show/hide password functionality
+		function togglePasswordVisibility() {
+			var passwordInput = document.querySelector('input[name="password"]');
+			var checkbox = document.getElementById('showPasswordCheckbox');
+			if (passwordInput && checkbox) {
+				passwordInput.type = checkbox.checked ? 'text' : 'password';
+			}
+		}
+	</script>
 	<!--end::Javascript-->
 </body>
 <!--end::Body-->
